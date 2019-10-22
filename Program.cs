@@ -16,10 +16,11 @@ namespace ArrsSum
             //Average();
             //index();
             //palindrom();
-            CommonElements();
+            //CommonElements();
             //InsertAtCertainIndex();
             //MinMax();
             //mergeArray();
+            MinMaximum();
 
 
             Console.ReadLine();
@@ -214,6 +215,30 @@ namespace ArrsSum
                 Console.WriteLine(result);
             }
 
+        }
+
+        private static void MinMaximum()
+        {
+            Console.Write("How many numbers do you want to store in array: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[n];
+            int min = numbers[0];
+            int max = numbers[0];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Enter number {0}:  ", i + 1);
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                if (min > numbers[i]) min = numbers[i];
+                if (max < numbers[i]) max = numbers[i];
+            }
+            Console.WriteLine("The minimum is: {0}", min);
+            Console.WriteLine("The maximum is: {0}", max);
+            Console.ReadKey();
         }
     }
 }
